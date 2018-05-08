@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Reputation Task</string>
+    <string name="upload_activity">UploadActivity</string>
+    <string name="download_activity">DownloadActivity</string>
+    <string name="download_selection_activity">Images in the bucket</string>
+    <string name="download">Download</string>
+    <string name="manage_download">Manage downloads</string>
+    <string name="upload">Upload</string>
+    <string name="manage_upload">Manage uploads</string>
+    <string name="upload_file">View S3 images</string>
+    <string name="upload_image">upload images</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="pause_all">Pause all</string>
+    <string name="cancel_all">Cancel all</string>
+    <string name="refreshing">Loading</string>
+    <string name="please_wait">Please wait</string>
+
+</resources>
