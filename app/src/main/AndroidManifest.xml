@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".DownloadSelectionActivity"
+            android:name=".ViewImagesActivity"
             android:label="@string/download_selection_activity" />
 
         <service

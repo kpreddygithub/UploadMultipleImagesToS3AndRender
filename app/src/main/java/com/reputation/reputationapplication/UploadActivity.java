@@ -47,6 +47,9 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferType;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.reputation.reputationapplication.utils.Constants;
+import com.reputation.reputationapplication.utils.PermissionUtil;
+import com.reputation.reputationapplication.utils.Util;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -158,7 +161,7 @@ public class UploadActivity extends AppCompatActivity {
          * This adapter takes the data in transferRecordMaps and displays it,
          * with the keys of the map being related to the columns in the adapter
          */
-        boolean result = Utility.checkPermission(UploadActivity.this);
+        boolean result = PermissionUtil.checkPermission(UploadActivity.this);
         ListView listView = (ListView) findViewById(R.id.list_view);
         simpleAdapter = new SimpleAdapter(this, transferRecordMaps,
                 R.layout.record_item, new String[]{
@@ -226,7 +229,7 @@ public class UploadActivity extends AppCompatActivity {
         btnUploadFile.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(UploadActivity.this, DownloadSelectionActivity.class);
+                Intent intent = new Intent(UploadActivity.this, ViewImagesActivity.class);
                 startActivity(intent);
             }
         });

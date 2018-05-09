@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 
-package com.reputation.reputationapplication;
+package com.reputation.reputationapplication.utils;
 
 import android.content.Context;
 import android.net.Uri;

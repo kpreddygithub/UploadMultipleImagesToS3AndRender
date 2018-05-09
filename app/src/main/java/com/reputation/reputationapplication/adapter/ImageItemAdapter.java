@@ -1,4 +1,4 @@
-package com.reputation.reputationapplication;
+package com.reputation.reputationapplication.adapter;
 
 /**
  * Created by MyDukan_SHIVAYOGI on 08-02-2018.
@@ -14,11 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.reputation.reputationapplication.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListViewAdapter extends BaseAdapter {
+public class ImageItemAdapter extends BaseAdapter {
     private String S3_URL = "https://s3.us-east-2.amazonaws.com/reputation-interview/";
     private final ArrayList<HashMap<String, Object>> transferRecordMaps;
     // Declare Variables
@@ -26,7 +27,7 @@ public class ListViewAdapter extends BaseAdapter {
 
     LayoutInflater inflater;
 
-    public ListViewAdapter(Context context, ArrayList<HashMap<String, Object>> transferRecordMaps) {
+    public ImageItemAdapter(Context context, ArrayList<HashMap<String, Object>> transferRecordMaps) {
         this.context = context;
         this.transferRecordMaps = transferRecordMaps;
     }

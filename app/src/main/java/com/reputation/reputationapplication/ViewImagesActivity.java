@@ -24,29 +24,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleAdapter.ViewBinder;
-import android.widget.TextView;
 
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.reputation.reputationapplication.adapter.ImageItemAdapter;
+import com.reputation.reputationapplication.utils.Constants;
+import com.reputation.reputationapplication.utils.Util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 /**
- * DownloadSelectionActivity displays a list of files in the bucket. Users can
+ * ViewImagesActivity displays a list of files in the bucket. Users can
  * select a file to download.
  */
-public class DownloadSelectionActivity extends AppCompatActivity {
+public class ViewImagesActivity extends AppCompatActivity {
 
     // The S3 client used for getting the list of objects in the bucket
     private AmazonS3Client s3;
     // An adapter to show the objects
     private ArrayList<HashMap<String, Object>> transferRecordMaps;
     private Util util;
-    private ListViewAdapter listViewAdapter;
+    private ImageItemAdapter listViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +66,13 @@ public class DownloadSelectionActivity extends AppCompatActivity {
 
     private void initData() {
         // Gets the default S3 client.
-        s3 = util.getS3Client(DownloadSelectionActivity.this);
+        s3 = util.getS3Client(ViewImagesActivity.this);
         transferRecordMaps = new ArrayList<HashMap<String, Object>>();
     }
 
     private void initUI() {
         ListView imagesListView = (ListView) findViewById(R.id.images_listview);
-        listViewAdapter = new ListViewAdapter(this, transferRecordMaps);
+        listViewAdapter = new ImageItemAdapter(this, transferRecordMaps);
         imagesListView.setAdapter(listViewAdapter);
 
         // When an item is selected, finish the activity and pass back the S3
@@ -100,7 +100,7 @@ public class DownloadSelectionActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            dialog = ProgressDialog.show(DownloadSelectionActivity.this,
+            dialog = ProgressDialog.show(ViewImagesActivity.this,
                     getString(R.string.refreshing),
                     getString(R.string.please_wait));
         }
